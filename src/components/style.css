@@ -1,0 +1,63 @@
+.Background {
+  background: url(../images/back.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+html,
+.Background {
+  overflow-y: scroll;
+}
+
+.CountText {
+  margin-top: 7.5%;
+  margin-left: 15%;
+  width: 25%;
+  height: 25%;
+  text-align: center;
+  border-bottom: dashed;
+  border-color: black;
+  position: fixed;
+}
+
+.TxtSize {
+  font-size: 700%;
+  display: inline-block;
+  position: relative;
+  top: 60%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.Speed-1 {
+  margin-left: 10%;
+  width: 35%;
+  margin-top: 23%;
+  text-align: center;
+  font-size: 150%;
+  position: fixed;
+}
+.Speed-2 {
+  margin-left: 10%;
+  width: 35%;
+  margin-top: 25%;
+  text-align: center;
+  font-size: 150%;
+  position: fixed;
+}
+
+.Buttons {
+  margin-top: 30%;
+  margin-left: 12.5%;
+  width: 30%;
+  text-align: center;
+  display: inline-block;
+  position: fixed;
+}
+
+.ResetBtn {
+  margin-top: 35%;
+  margin-left: 15%;
+  width: 25%;
+  text-align: center;
+  position: fixed;
+}
