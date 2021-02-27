@@ -1,13 +1,8 @@
 .Background {
   background: url(../images/back.jpg) no-repeat center center fixed;
   background-size: cover;
-}
-
-html,
-.Background {
   overflow-y: scroll;
 }
-
 .CountText {
   margin-top: 7.5%;
   margin-left: 15%;
@@ -18,7 +13,6 @@ html,
   border-color: black;
   position: fixed;
 }
-
 .TxtSize {
   font-size: 700%;
   display: inline-block;
@@ -44,7 +38,6 @@ html,
   font-size: 150%;
   position: fixed;
 }
-
 .Buttons {
   margin-top: 30%;
   margin-left: 12.5%;
@@ -53,7 +46,6 @@ html,
   display: inline-block;
   position: fixed;
 }
-
 .ResetBtn {
   margin-top: 35%;
   margin-left: 15%;

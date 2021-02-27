@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import IncreaseSpeed from "./IncreaseSpeed.js";
 import DecreaseSpeed from "./DecreaseSpeed.js";
 import Reset from "./Reset.js";
-import "./style.css";
+import "./style.scss";
 import { Grid } from "semantic-ui-react";
 import ScrollComponent from "./scrollcomponent.js";
 
@@ -18,9 +18,9 @@ class HomePage extends Component {
     this.resetCounter = this.resetCounter.bind(this);
     this.clearAndStart = this.clearAndStart.bind(this);
   }
-
   async componentDidMount() {
     window.addEventListener("scroll", this.handleScroll, true);
+
     document.title = "Counter Test";
     if (this.state.factor < 1) {
       await this.setStateAsync({
