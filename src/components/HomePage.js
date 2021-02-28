@@ -123,7 +123,6 @@ class HomePage extends Component {
         <div className="ResetBtn">
           <Reset data={this.resetCounter} />
         </div>
-        <ScrollComponent />
       </div>
     );
   }
