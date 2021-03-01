@@ -4,7 +4,6 @@ import DecreaseSpeed from "./DecreaseSpeed.js";
 import Reset from "./Reset.js";
 import "./style.scss";
 import { Grid } from "semantic-ui-react";
-import ScrollComponent from "./scrollcomponent.js";
 
 class HomePage extends Component {
   constructor() {
@@ -16,9 +15,9 @@ class HomePage extends Component {
     };
     this.changeSpeed = this.changeSpeed.bind(this);
     this.resetCounter = this.resetCounter.bind(this);
-    this.clearAndStart = this.clearAndStart.bind(this);
   }
   async componentDidMount() {
+    console.log(this.state.factor, "<--");
     window.addEventListener("scroll", this.handleScroll, true);
 
     document.title = "Counter Test";
@@ -34,6 +33,26 @@ class HomePage extends Component {
       }));
     }, val);
   }
+
+  async componentDidUpdate(prevProps, prevState) {
+    console.log(prevState.factor, "-", this.state.factor);
+    if (prevState.factor !== this.state.factor) {
+      if (this.state.factor < 1) {
+        await this.setStateAsync({
+          factor: 1,
+        });
+      }
+
+      clearInterval(this.timeInterval);
+      const val = parseFloat(1000 / this.state.factor);
+      this.timeInterval = setInterval(() => {
+        this.setState((prevState) => ({
+          timeCount: (prevState.timeCount + 1) % 60,
+        }));
+      }, val);
+    }
+  }
+
   handleScroll = () => {
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
@@ -69,7 +88,6 @@ class HomePage extends Component {
     await this.setStateAsync({
       factor: value,
     });
-    this.clearAndStart();
   }
 
   async resetCounter() {
@@ -77,13 +95,6 @@ class HomePage extends Component {
       factor: 1,
       timeCount: 0,
     });
-
-    this.clearAndStart();
-  }
-
-  clearAndStart() {
-    clearInterval(this.timeInterval);
-    this.componentDidMount();
   }
 
   render() {
